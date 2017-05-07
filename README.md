@@ -16,6 +16,12 @@ Then generate your new project:
 yo es6-fast-setup
 ```
 
+After the project is initialized, you can run
+```bash
+npm run start
+```
+This will build the code and you will get the output in dist/ folder.
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.

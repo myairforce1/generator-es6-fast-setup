@@ -7,7 +7,7 @@ const extend = require('deep-extend');
 const path = require('path');
 
 module.exports = class extends Generator {
-  prompting = () => {
+  prompting(){
     // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the stellar ' + chalk.red('generator-es6-fast-setup') + ' generator!'
@@ -16,8 +16,8 @@ module.exports = class extends Generator {
     const prompts = [{
       type: 'input',
       name: 'projectName',
-      message: 'Please input project name (es6_project):',
-      default: 'es6_project'
+      message: 'Please input project name (es6_proj):',
+      default: 'es6_proj'
     }, {
       type: 'input',
       name: 'projectVersion',
@@ -40,7 +40,7 @@ module.exports = class extends Generator {
     });
   }
 
-  defaults = () => {
+  defaults(){
 
     if (path.basename(this.destinationPath()) !== this.props.projectName) {
       this.log(
@@ -54,7 +54,7 @@ module.exports = class extends Generator {
   }
 
 
-  writing = () => {
+  writing(){
     let pkg = this.fs.readJSON(this.templatePath('package_tmpl.json'));
     
     extend(pkg, {
@@ -77,7 +77,7 @@ module.exports = class extends Generator {
     pkg.main = this.props.projectVersion;
     pkg.author = this.props.projectAuthor;
 
-   
+    this.destinationPath('package.json');
     this.fs.writeJSON(this.destinationPath('package.json'), pkg);
 
     mkdirp('dist/');
@@ -90,17 +90,17 @@ module.exports = class extends Generator {
       this.templatePath('index.js'),
       this.destinationPath('index.js')
     );
-    this.fs.copy(
-      this.templatePath('package.json'),
-      this.destinationPath('package.json')
-    );
+    // this.fs.copy(
+    //   this.templatePath('package.json'),
+    //   this.destinationPath('package.json')
+    // );
     this.fs.copy(
       this.templatePath('webpack.config.js'),
       this.destinationPath('webpack.config.js')
     );
   }
 
-  install = () => {
+  install(){
     this.installDependencies();
   }
 };
