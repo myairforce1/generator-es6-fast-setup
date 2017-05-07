@@ -1,5 +1,5 @@
 {
-  "name": "generator-es-6-fast-setup",
+  "name": "generator-es6-fast-setup",
   "version": "0.0.1",
   "description": "Quickly setup the ES2015 programming environment.",
   "homepage": "",
@@ -46,6 +46,6 @@
       "node": true
     }
   },
-  "repository": "myairforce1/generator-es-6-fast-setup",
+  "repository": "myairforce1/generator-es6-fast-setup",
   "license": "Apache-2.0"
 }
