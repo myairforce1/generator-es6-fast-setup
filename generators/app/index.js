@@ -55,7 +55,7 @@ module.exports = class extends Generator {
 
 
   writing = () => {
-    let pkg = this.fs.readJSON(this.templatePath('package.json'));
+    let pkg = this.fs.readJSON(this.templatePath('package_tmpl.json'));
     
     extend(pkg, {
       dependencies: {
