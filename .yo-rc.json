@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Eric",
+      "authorEmail": "myairforce1@qq.com",
+      "authorUrl": ""
+    }
+  }
+}
